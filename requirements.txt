@@ -1,0 +1,14 @@
+# Grainwell runtime dependencies
+#
+# None. Grainwell is one file of pure standard library Python (argparse, math,
+# json, shutil, sys, time, dataclasses, termios/select for the countdown) on
+# CPython 3.9+.
+#
+# Nothing is installed at runtime, nothing talks to the network and there is no
+# install step - unpack and run:
+#
+#     python3 grainwell.py --help
+#
+# The optional test extra lives in pyproject.toml ([project.optional-dependencies]).
+# The suite itself is written with unittest, so it also runs with no packages at
+# all:  python3 -m unittest discover -s tests

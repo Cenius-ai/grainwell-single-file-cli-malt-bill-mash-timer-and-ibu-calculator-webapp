@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grainwell"
+version = "1.0.0"
+description = "Malt bill colour, mash strike temperature table, step timer and Tinseth IBU in one standard-library file."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Grainwell" }]
+keywords = ["brewing", "beer", "srm", "ibu", "tinseth", "mash", "cli"]
+dependencies = []
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+grainwell = "grainwell:main"
+
+[project.optional-dependencies]
+# The suite is unittest-based and needs nothing; pytest is a convenience runner.
+test = ["pytest==9.1.1"]
+
+[tool.setuptools]
+py-modules = ["grainwell"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
